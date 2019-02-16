@@ -26,8 +26,8 @@ public class TestaInsereMovimentacaoComConta {
 		Movimentacao movimentacao = new Movimentacao();
 		manager.persist(conta);
 		movimentacao.setConta(conta);
-		movimentacao.setData(LocalDateTime.now());
-		movimentacao.setDescricao("Conta de agua - Fevereiro/2019");
+//		movimentacao.setData(LocalDateTime.now());
+		movimentacao.setDescricao("Conta de telefone - Fevereiro/2019");
 		movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
 		movimentacao.setValor(new BigDecimal(100.0));
 		

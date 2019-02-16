@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 
 @Entity
 public class Movimentacao {
@@ -60,6 +62,13 @@ public class Movimentacao {
 	}
 	public void setTipoMovimentacao(TipoMovimentacao tipoMovimentacao) {
 		this.tipoMovimentacao = tipoMovimentacao;
+	}
+	
+	@PrePersist
+	@PreUpdate
+	public void preAtera() {
+		System.out.println("Atualizando a data da movimentação");
+		this.setData(LocalDateTime.now());
 	}
 	
 	
